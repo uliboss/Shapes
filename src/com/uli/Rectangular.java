@@ -12,32 +12,16 @@ public class Rectangular {
         return length;
     }
 
-    public void setLength(double length) {
-        this.length = length;
-    }
-
     public double getWidth() {
         return width;
-    }
-
-    public void setWidth(double width) {
-        this.width = width;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getColor() {
         return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
     }
 
     @Override
@@ -78,7 +62,5 @@ public class Rectangular {
     public double getSquare(){
         return length * width;
     }
-
-    public static String[] randomColor = {"Blue", "Yellow", "Black", "Orange", "Purple"};
 
 }
