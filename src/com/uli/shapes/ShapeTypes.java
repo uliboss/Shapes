@@ -1,4 +1,4 @@
-package com.uli.figures;
+package com.uli.shapes;
 
 public enum ShapeTypes {
     CIRCLE,

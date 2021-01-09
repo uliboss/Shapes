@@ -1,42 +1,54 @@
 package com.uli;
 
-import com.uli.figures.Circle;
-import com.uli.figures.Shape;
-import com.uli.figures.ShapeFactory;
-import com.uli.figures.ShapeTypes;
-import com.uli.services.Calculator;
-import com.uli.services.PerimeterCalculatorService;
+import com.uli.services.CalculatorServiceImpl;
+import com.uli.shapes.Shape;
+import com.uli.shapes.ShapeFactory;
+import com.uli.shapes.ShapeTypes;
+import com.uli.shapes.right.Rectangle;
 
-import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
+
+// 1. Read what is maven (google maven and go to documentation or open some tutorial link)
+// 2. Read about pom.xml file and what it can contain
+// 3. Try to move current project from simple java project to maven java project
+
 
 public class Application {
+
     public static void main(String[] args) {
-//        Rectangular rectangularFirst = new Rectangular();
-//        Rectangular rectangularSecond = new Rectangular(10, 5, "SuperRectangular", Rectangular.randomColor[new Random().nextInt(Rectangular.randomColor.length)]);
-//        Rectangular rectangularThird = new Rectangular(rectangularSecond);
-//        rectangularSecond.setLength(11);
-//        System.out.println(rectangularFirst);
-//        System.out.println(rectangularSecond);
-//        System.out.println(rectangularThird);
-//        System.out.println("Perimeter is " + (int)rectangularSecond.getPerimeter());
-//        System.out.println("Square is " + (int)rectangularSecond.getSquare());
-
-//        Shape [] shapes = null;
-//        for (Shape s: shapes) {
-//            s.createShapes
-//        }
-
         ShapeFactory shapeFactory = new ShapeFactory();
 
-        Shape circle = shapeFactory.getShape(ShapeTypes.CIRCLE, 5,3,2);
-//        Shape rectangle = shapeFactory.getShape(ShapeTypes.RECTANGLE);
-//        Shape square = shapeFactory.getShape(ShapeTypes.SQUARE);
-//        circle.create();
-//        rectangle.create();
-//        square.create();
-        Calculator calculator = new PerimeterCalculatorService(circle);
-        System.out.println(calculator.calculate());
+        Shape circle = shapeFactory.getShape(ShapeTypes.CIRCLE);
 
+        Rectangle rectangle = buildRectangle(shapeFactory, 5, 10);
 
+        List<Shape> shapes = new ArrayList<>();
+
+        CalculatorServiceImpl calculatorService = new CalculatorServiceImpl();
+        double perimeter = calculatorService.calculatePerimeter(rectangle);
+
+        System.out.println(perimeter);
+        System.out.println(rectangle);
+
+        rectangle.create();
+
+    }
+
+    private static Rectangle buildRectangle(ShapeFactory shapeFactory, double length, double width) {
+//        CsvReader csvReader = new CsvReader(pathname);
+//        Cursor cursor = csvReader.getCursor();
+//
+//        if(cursor.hasNext()){
+//            Rectangle rectangle = ((Rectangle) shapeFactory.getShape(ShapeTypes.RECTANGLE))
+//                    .length(cursor[0])
+//                    .width(cursor[1])
+//                    .build();
+//        }
+
+        return ((Rectangle) shapeFactory.getShape(ShapeTypes.RECTANGLE))
+                .length(length)
+                .width(width)
+                .build();
     }
 }
