@@ -3,9 +3,9 @@ package com.uli.shapes.right;
 import com.uli.shapes.Shape;
 
 public abstract class RightShape extends Shape {
-
     protected double length;
     protected double width;
+    String cn = getClass().getSimpleName();
 
     public RightShape() {
         this.length = 0;
@@ -40,9 +40,8 @@ public abstract class RightShape extends Shape {
 
     @Override
     public String toString() {
-        return "RightShape{" +
+        return  cn + "'s " +
                 "length=" + length +
-                ", width=" + width +
-                '}';
+                ", width=" + width;
     }
 }

@@ -15,7 +15,7 @@ public class Circle extends RoundShape {
         System.out.println("Circle is created");
     }
 
-    public Circle setRadius(double radius){
+    public Circle radius(double radius){
         this.radius = radius;
         return this;
     }

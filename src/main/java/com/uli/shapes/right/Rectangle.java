@@ -1,7 +1,6 @@
 package com.uli.shapes.right;
 
 // Default constructors can have initial values for fields
-
 public class Rectangle extends RightShape {
 
     public Rectangle() {

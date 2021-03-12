@@ -15,14 +15,13 @@ public class Square extends RightShape {
         System.out.println("Square is created");
     }
 
-    public Square setSide(double side){
+    public Square side(double side) {
         this.width = side;
         this.length = side;
         return this;
     }
 
-
-    public Square build(){
+    public Square build() {
         return new Square(length);
     }
 }

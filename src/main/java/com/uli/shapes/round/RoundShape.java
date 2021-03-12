@@ -3,8 +3,8 @@ package com.uli.shapes.round;
 import com.uli.shapes.Shape;
 
 public abstract class RoundShape extends Shape {
-
     protected double radius;
+    String cn = getClass().getSimpleName();
 
     public RoundShape() {
         this.radius = 0;
@@ -25,8 +25,7 @@ public abstract class RoundShape extends Shape {
 
     @Override
     public String toString() {
-        return "RoundShape{" +
-                "radius=" + radius +
-                '}';
+        return cn + "'s " +
+                "radius=" + radius;
     }
 }
